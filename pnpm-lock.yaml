@@ -13,6 +13,7 @@ specifiers:
   prettier: ^2.6.2
   react: 18.0.0
   react-dom: 18.0.0
+  react-reduce-motion: ^2.0.2
   react-spring: ^9.4.4
 
 dependencies:
@@ -25,6 +26,7 @@ dependencies:
   next-themes: 0.1.1_1cf2cc49e2c27648b440cc4e09213966
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
+  react-reduce-motion: 2.0.2_react@18.0.0
   react-spring: 9.4.4_react-dom@18.0.0+react@18.0.0
 
 devDependencies:
@@ -1714,6 +1716,14 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-reduce-motion/2.0.2_react@18.0.0:
+    resolution: {integrity: sha512-4E5oIMIb8PIfeKR9NJtkHTRCukSdkCkvlhsq+nB03CgIWnrX3wyM46LUlKxdHcFUyzmaGUD04BjkIxRFqtccLg==}
+    peerDependencies:
+      react: ^16.8.0
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /react-spring/9.4.4_react-dom@18.0.0+react@18.0.0:
     resolution: {integrity: sha512-VOqilh9DJBsS6Pf550YLhdReS3j9a2AQVh7NcsNtWoxTYIeuErWi6ym0++6bBhQp4yT5xvVvUDaJ8ez8vrFgaw==}

@@ -1,13 +1,15 @@
 .postList {
   list-style: none;
   padding-left: 0;
+  margin-top: 3rem;
 }
 
 .postList > li {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .postLink {
+  display: block;
   font-size: var(--font-md);
   font-weight: var(--font-extrabold);
 }
@@ -17,6 +19,5 @@
 }
 
 .postDate {
-  margin-left: 1rem;
   font-size: var(--font-xs);
 }

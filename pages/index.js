@@ -6,9 +6,6 @@ export default function Home({ allPosts }) {
   return (
     <Layout>
       <section>
-        <h1>Daniel Dolehide</h1>
-      </section>
-      <section>
         <h2>Posts</h2>
         <PostList allPosts={allPosts} />
       </section>

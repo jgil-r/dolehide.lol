@@ -1,0 +1,22 @@
+.postList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.postList > li {
+  margin-bottom: 1rem;
+}
+
+.postLink {
+  font-size: var(--font-md);
+  font-weight: var(--font-extrabold);
+}
+
+.postLink:hover {
+  text-decoration: underline;
+}
+
+.postDate {
+  margin-left: 1rem;
+  font-size: var(--font-xs);
+}

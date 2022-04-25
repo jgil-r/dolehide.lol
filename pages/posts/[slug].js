@@ -4,7 +4,6 @@ import Layout from '@components/Layout';
 import PostLayout from '@components/PostLayout';
 
 export default function Post({ post }) {
-  console.log(post);
   return (
     <Layout
       meta={{
@@ -56,8 +55,6 @@ export async function getStaticPaths() {
   const paths = data.posts.map(({ slug }) => ({
     params: { slug },
   }));
-
-  console.log(paths);
 
   return {
     paths,

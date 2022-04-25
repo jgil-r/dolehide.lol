@@ -46,9 +46,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-section,
-article {
-  margin: 5rem 0;
+section {
+  padding: 5rem 0;
 }
 
 article > * {

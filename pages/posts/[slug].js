@@ -4,7 +4,12 @@ import PostLayout from '@components/PostLayout';
 
 export default function Post({ post }) {
   return (
-    <Layout>
+    <Layout
+      meta={{
+        title: post.title,
+        description: post.description,
+      }}
+    >
       <PostLayout post={post} />
     </Layout>
   );

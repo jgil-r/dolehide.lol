@@ -4,7 +4,7 @@ import styles from './PostLayout.module.css';
 
 export default function PostLayout({ post }) {
   return (
-    <article>
+    <article className={styles.postContainer}>
       <div className={styles.postHeading}>
         <h1>{post.title}</h1>
         <span>

@@ -4,7 +4,12 @@ import { getAllPosts } from '@lib/graphcms';
 
 export default function Home({ allPosts }) {
   return (
-    <Layout>
+    <Layout
+      meta={{
+        title: 'Home',
+        description: 'Personal blog by Daniel Dolehide.',
+      }}
+    >
       <section>
         <h2>Posts</h2>
         <PostList allPosts={allPosts} />

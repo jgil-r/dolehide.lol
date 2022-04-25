@@ -3,7 +3,7 @@ import Head from 'next/head';
 export default function Seo({ meta }) {
   return (
     <Head>
-      <title>{meta.title} | Daniel Dolehide</title>
+      <title>{`${meta.title} | Daniel Dolehide`}</title>
       <meta name="title" content={meta.title} />
       <meta name="description" content={meta.description} />
 

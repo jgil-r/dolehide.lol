@@ -1,8 +1,9 @@
+import { gql } from '@apollo/client';
 import Layout from '@components/Layout';
 import PostList from '@components/PostList';
-import { getAllPosts } from '@lib/graphcms';
+import { client } from '@lib/graphcms';
 
-export default function Home({ allPosts }) {
+export default function Home({ posts }) {
   return (
     <Layout
       meta={{
@@ -12,18 +13,30 @@ export default function Home({ allPosts }) {
     >
       <section>
         <h2>Posts</h2>
-        <PostList allPosts={allPosts} />
+        <PostList posts={posts} />
       </section>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const allPosts = await getAllPosts();
+  const { data } = await client.query({
+    query: gql`
+      query GetPosts {
+        posts {
+          id
+          slug
+          publishedAt
+          title
+          description
+        }
+      }
+    `,
+  });
 
   return {
     props: {
-      allPosts,
+      posts: data.posts,
     },
   };
 }

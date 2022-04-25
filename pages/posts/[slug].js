@@ -1,8 +1,10 @@
-import { getPostBySlug, getPostSlug } from '@lib/graphcms';
+import { gql } from '@apollo/client';
+import { getPostBySlug, getPostSlug, client } from '@lib/graphcms';
 import Layout from '@components/Layout';
 import PostLayout from '@components/PostLayout';
 
 export default function Post({ post }) {
+  console.log(post);
   return (
     <Layout
       meta={{
@@ -16,22 +18,49 @@ export default function Post({ post }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = params;
+  const { data } = await client.query({
+    query: gql`
+      query GetPostBySlug($slug: String!) {
+        post(where: { slug: $slug }) {
+          id
+          publishedAt
+          title
+          content {
+            raw
+          }
+        }
+      }
+    `,
+    variables: { slug },
+  });
 
   return {
     props: {
-      post,
+      post: data.post,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const posts = await getPostSlug();
+  const { data } = await client.query({
+    query: gql`
+      query GetPostSlugs {
+        posts {
+          slug
+        }
+      }
+    `,
+  });
+
+  const paths = data.posts.map(({ slug }) => ({
+    params: { slug },
+  }));
+
+  console.log(paths);
 
   return {
-    paths: posts.map(({ slug }) => ({
-      params: { slug },
-    })),
+    paths,
     fallback: false,
   };
 }

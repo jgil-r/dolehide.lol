@@ -50,7 +50,7 @@ export default function Header() {
         router.asPath !== '/' ? styles.headerNotHomePage : styles.headerHomePage
       )}
     >
-      {router.asPath !== '/' ? (
+      {/*{router.asPath !== '/' ? (
         <Link href="/">
           <a className={styles.allPostsLink}>
             <svg
@@ -72,7 +72,7 @@ export default function Header() {
           </a>
         </Link>
       ) : null}
-
+     */}
       {hasMounted ? (
         <button
           className={styles.themeButton}

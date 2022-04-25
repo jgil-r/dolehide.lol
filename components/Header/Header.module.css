@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   position: -webkit-sticky;
   position: sticky;
@@ -11,9 +12,9 @@
   background-color: var(--bg);
 }
 
-.headerHomePage {
-  justify-content: flex-end;
-}
+/* .headerHomePage { */
+/*   justify-content: flex-end; */
+/* } */
 
 .headerNotHomePage {
   justify-content: space-between;
